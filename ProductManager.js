@@ -7,8 +7,14 @@ class ProductManager {
     #path
 
     constructor(path) {
-        this.#products = []
+       // this.#products = []
+        //this.path = path
         this.path = path
+        try {
+            this.#products = this.getProducts()
+        } catch (error) {
+            this.#products = []
+        }
     }
 
     #generateID = () => {
